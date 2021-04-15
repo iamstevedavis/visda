@@ -104,11 +104,11 @@ const Navbar = () => {
       </Toggle>
       {navbarOpen ? (
         <Navbox>
-          <NavbarLinks />
+          <NavbarLinks closeNavBar={setNavbarOpen} />
         </Navbox>
       ) : (
         <Navbox open>
-          <NavbarLinks />
+          <NavbarLinks closeNavBar={setNavbarOpen} />
         </Navbox>
       )}
     </Navigation>

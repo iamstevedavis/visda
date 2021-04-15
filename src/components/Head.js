@@ -1,31 +1,57 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from 'gatsby'
 
-import { GatsbyImage } from "gatsby-plugin-image";
-import React from "react";
+import BackgroundImage from 'gatsby-background-image'
+import React from 'react'
+import styled from 'styled-components'
 
-const Head = () => {
-  const data = useStaticQuery(graphql`
-    {
-      file(name: {eq: "banner"}, extension: {eq: "jpg"}) {
-        childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
-        }        
+export const StyledContentCenterWrapper = styled.div`
+  display: flex;
+  text-align: center;
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`
+
+const BackgroundSection = ({ className }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        desktop: file(relativePath: { eq: "banner.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
-    }
-  `);
-  // const image = getImage(data.file.childImageSharp.fluid)
-console.log(JSON.stringify(data))
+    `
+  )
+
+  // Set ImageData.
+  const imageData = data.desktop.childImageSharp.fluid
+
   return (
-    // <View style={styles.imageWrapper}>
-    //  <ImageBackground style={styles.theImage} source={{uri : item.imageUrl}}>
-    //       <Text>Hey</Text>
-    //  </ImageBackground>
-    // </View> 
-    // <StaticImage src={data.file.childImageSharp.fluid.src} alt="A kitten" />
-    <div style={{ backgroundColor: "black" }}>
-      <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} />
-    </div>
+    <BackgroundImage
+      Tag="section"
+      className={className}
+      fluid={imageData}
+      backgroundColor={`#040e18`}
+    >
+      <StyledContentCenterWrapper>
+        <h2>Stephen Davis</h2>
+        <p>Professional.<br /> I do not give a shit about your product, culture, or stock options.</p>
+      </StyledContentCenterWrapper>
+    </BackgroundImage>
   )
 }
 
-export default Head
+const StyledBackgroundSection = styled(BackgroundSection)`
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export default StyledBackgroundSection

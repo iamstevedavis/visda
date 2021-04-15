@@ -39,13 +39,13 @@ const NavItem = styled(Link)`
     z-index: 6;
   }
 `
-const NavbarLinks = () => {
+const NavbarLinks = ({closeNavBar}) => {
   return (
     <>
-      <NavItem to="/">About</NavItem>
-      <NavItem to="/404">Services</NavItem>
-      <NavItem to="/">Gallery</NavItem>
-      <NavItem to="/404">Contact</NavItem>
+      <NavItem onClick={closeNavBar} to="/">About</NavItem>
+      <NavItem to="#projects">Projects</NavItem>
+      <NavItem to="/404">Gallery</NavItem>
+      <NavItem to="/">Contact</NavItem>
     </>
   )
 }
