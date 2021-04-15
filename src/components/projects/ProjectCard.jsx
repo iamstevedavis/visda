@@ -16,29 +16,29 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImgMediaCard({cardData}) {
+export default function ImgMediaCard({ cardData }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardActionArea
-        target="_blank" 
-        href={ cardData.learnMoreLink }
-        style={{height: "100%"}}
+        target="_blank"
+        href={cardData.learnMoreLink}
+        style={{ height: '100%' }}
       >
         <CardMedia
           component={cardData.imageComponent}
-          alt={ cardData.alt }
-          image={ cardData.image }
-          title={ cardData.imageTitle }
+          alt={cardData.alt}
+          image={cardData.image}
+          title={cardData.imageTitle}
           className={classes.media}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            { cardData.title }
+            {cardData.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            { cardData.info }
+            {cardData.info}
           </Typography>
         </CardContent>
       </CardActionArea>

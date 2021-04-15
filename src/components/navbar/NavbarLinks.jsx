@@ -1,8 +1,8 @@
 // NavbarLinks.js
 
-import { Link } from "gatsby"
-import React from "react"
-import styled from "styled-components"
+import { Link } from 'gatsby';
+import React from 'react';
+import styled from 'styled-components';
 
 const NavItem = styled(Link)`
   text-decoration: none;
@@ -38,16 +38,15 @@ const NavItem = styled(Link)`
     font-size: 1.5rem;
     z-index: 6;
   }
-`
-const NavbarLinks = ({closeNavBar}) => {
-  return (
-    <>
-      <NavItem onClick={closeNavBar} to="/">About</NavItem>
-      <NavItem to="#projects">Projects</NavItem>
-      <NavItem to="/404">Gallery</NavItem>
-      <NavItem to="/">Contact</NavItem>
-    </>
-  )
-}
+`;
+const NavbarLinks = () => (
+  <>
+    <NavItem to="#about">
+      About
+    </NavItem>
+    <NavItem to="#projects">Projects</NavItem>
+    <NavItem to="#contact">Contact</NavItem>
+  </>
+);
 
-export default NavbarLinks
+export default NavbarLinks;

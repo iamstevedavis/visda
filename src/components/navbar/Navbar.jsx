@@ -1,10 +1,10 @@
 // Navbar.js
 
-import React, { useState } from "react"
+import React, { useState } from 'react';
 
-import Logo from "./Logo"
-import NavbarLinks from "./NavbarLinks"
-import styled from "styled-components"
+import styled from 'styled-components';
+import Logo from './Logo';
+import NavbarLinks from './NavbarLinks';
 
 const Navigation = styled.nav`
   height: 10vh;
@@ -27,7 +27,7 @@ const Navigation = styled.nav`
     right: 0;
     left: 0;
   }
-`
+`;
 
 const Toggle = styled.div`
   display: none;
@@ -38,7 +38,7 @@ const Toggle = styled.div`
   @media (max-width: 768px) {
     display: flex;
   }
-`
+`;
 
 const Navbox = styled.div`
   display: flex;
@@ -55,18 +55,18 @@ const Navbox = styled.div`
     background-color: #fff;
     transition: all 0.3s ease-in;
     top: 8vh;
-    left: ${props => (props.open ? "-100%" : "0")};
+    left: ${(props) => (props.open ? '-100%' : '0')};
   }
-`
+`;
 
 const Hamburger = styled.div`
   background-color: #111;
   width: 30px;
   height: 3px;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   align-self: center;
   position: relative;
-  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+  transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'inherit')};
 
   ::before,
   ::after {
@@ -79,19 +79,18 @@ const Hamburger = styled.div`
   }
 
   ::before {
-    transform: ${props =>
-      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
+    transform: ${(props) => (props.open ? 'rotate(-90deg) translate(-10px, 0px)' : 'rotate(0deg)')};
     top: -10px;
   }
 
   ::after {
-    opacity: ${props => (props.open ? "0" : "1")};
-    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
+    opacity: ${(props) => (props.open ? '0' : '1')};
+    transform: ${(props) => (props.open ? 'rotate(90deg) ' : 'rotate(0deg)')};
     top: 10px;
   }
-`
+`;
 const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false)
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <Navigation>
@@ -112,7 +111,7 @@ const Navbar = () => {
         </Navbox>
       )}
     </Navigation>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

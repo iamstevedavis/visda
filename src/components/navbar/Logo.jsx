@@ -1,9 +1,9 @@
 // Logo.js
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
-import { GatsbyImage } from "gatsby-plugin-image"
-import React from "react"
-import styled from "styled-components"
+import { GatsbyImage } from 'gatsby-plugin-image';
+import React from 'react';
+import styled from 'styled-components';
 
 const LogoWrap = styled.div`
   margin: auto 0;
@@ -12,11 +12,11 @@ const LogoWrap = styled.div`
   @media (max-width: 768px) and (orientation: landscape) {
     flex: 0 1 25px;
   }
-`
+`;
 const Logo = () => {
   const data = useStaticQuery(graphql`
     {
-      file(name: {eq: "visd_a"}, extension: {eq: "png"}) {
+      file(name: { eq: "visda" }, extension: { eq: "png" }) {
         childImageSharp {
           gatsbyImageData(width: 50, layout: CONSTRAINED)
         }
@@ -26,9 +26,12 @@ const Logo = () => {
 
   return (
     <LogoWrap as={Link} to="/">
-      <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} alt="logo" />
+      <GatsbyImage
+        image={data.file.childImageSharp.gatsbyImageData}
+        alt="logo"
+      />
     </LogoWrap>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;
