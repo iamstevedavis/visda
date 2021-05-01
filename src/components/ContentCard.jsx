@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  Paper, Box, Grid, Typography, ButtonBase,
+  Paper, Grid, Typography, ButtonBase,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -35,21 +35,25 @@ const ContentCard = () => {
     {
       title: 'Embdedded',
       subTitle: 'Foto',
+      link: 'https://github.com/iamstevedavis/foto',
       image: <img className={classes.imageStyles} src={foto50GIF} alt="Foto" />,
     },
     {
       title: 'Web Dev',
       subTitle: 'Sanctuary Refugee Health Clinic',
+      link: 'https://github.com/SanctuaryRefugeeHealth',
       image: <StaticImage src="../images/sanctuary_blood_drop_275x275.png" alt="Sanctuary Refugee Health Clinic" />,
     },
     {
       title: 'Integrated Services',
       subTitle: 'Happy Birthday',
+      link: 'https://github.com/iamstevedavis/happy-birthday',
       image: <img className={classes.imageStyles} src={happyBirthdayGIF} alt="Happy Birthday" />,
     },
     {
       title: 'Web Dev',
       subTitle: 'Cambridge Metalsmiths',
+      link: 'https://github.com/iamstevedavis/cambridgemetalsmiths',
       image: <img className={classes.imageStyles} src={moltenMetalGIF} alt="Cambridge Metalsmiths" />,
     },
   ];
@@ -77,9 +81,9 @@ const ContentCard = () => {
               container
               justify="center"
               alignItems="center"
-              style={{ minHeight: '65vh' }}
+              style={{ minHeight: '60vh' }}
             >
-              <ButtonBase>
+              <ButtonBase href={image.link}>
                 {image.image}
               </ButtonBase>
             </Grid>

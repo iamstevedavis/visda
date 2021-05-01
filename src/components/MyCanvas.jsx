@@ -2,7 +2,6 @@ import 'normalize.css/normalize.css';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/styles';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 const useStyles = makeStyles({
 

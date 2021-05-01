@@ -8,7 +8,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/favicon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'G-24LKJFKCXE',
       },
     },
     'gatsby-plugin-sharp',

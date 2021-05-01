@@ -8,6 +8,7 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useMediaQuery } from 'react-responsive';
+import foto50GIF from '../images/foto_50.gif';
 import Header from '../components/Header';
 import ContentCard from '../components/ContentCard';
 import MyCarousel from '../components/MyCarousel';
@@ -32,6 +33,20 @@ const lightTheme = createMuiTheme({
 });
 
 const useStyles = makeStyles({
+  backgroundGadient: {
+    width: 'inherit',
+    padding: '2%',
+    background: 'linear-gradient(120deg, pink, purple, cyan)',
+  },
+  cardActionAreaStyles: {
+    paddingBottom: '3vh',
+    display: 'grid',
+    alignItems: 'center',
+    textAlign: 'left',
+  },
+  imageStyles: {
+    width: '100%',
+  },
   typographyStyles: {
     padding: 50,
     fontWeight: 600,
@@ -75,8 +90,38 @@ const FotoPage = () => {
           {/* Top Intro Grid */}
           <Grid item container spacing={2}>
             <Grid item xs={0} sm={1} />
-            <Grid item container xs={12} sm={5} />
-            <Grid item container xs={12} sm={5} justify="center" direction="column" />
+            <Grid item container xs={12} sm={5}>
+              Left
+            </Grid>
+            <Grid item container xs={12} sm={5} justify="center" direction="column">
+              <Grid item xs={0} sm={1} />
+              <Grid item container xs={12} sm={10} direction="column">
+                <Paper elevation={5} className={classes.backgroundGadient}>
+                  <Grid container item>
+                    <Grid item xs={0} sm={1} />
+                    <Grid item xs={12} sm={10}>
+                      <Typography variant="h5" component="h2">
+                        Embedded
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p">
+                        Foto
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={0} sm={1} />
+                  </Grid>
+                  <Grid
+                    item
+                    container
+                    justify="center"
+                    alignItems="center"
+                    style={{ minHeight: '65vh' }}
+                  >
+                    <img className={classes.imageStyles} src={foto50GIF} alt="Foto" />
+                  </Grid>
+                </Paper>
+              </Grid>
+              <Grid item xs={0} sm={1} />
+            </Grid>
             <Grid item xs={0} sm={1} />
           </Grid>
           <Grid item container spacing={2} />

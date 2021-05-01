@@ -6,11 +6,9 @@ import { Grid, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { StaticImage } from 'gatsby-plugin-image';
 import { useMediaQuery } from 'react-responsive';
 import Header from '../components/Header';
 import ContentCard from '../components/ContentCard';
-import MyCarousel from '../components/MyCarousel';
 import MyCanvas from '../components/MyCanvas';
 
 const darkTheme = createMuiTheme({
