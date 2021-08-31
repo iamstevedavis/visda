@@ -6,7 +6,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { makeStyles } from '@material-ui/styles';
 import DescriptionIcon from '@material-ui/icons/Description';
-import resume from '../images/Stephen_Davis_Software_Developer.pdf';
+// import resume from '../images/Stephen_Davis_Software_Developer.pdf';
 
 const useStyles = makeStyles(() => ({
 }));
@@ -28,11 +28,11 @@ const Header = () => {
             <Grid item>
               <IconButton onClick={(event) => window.location.href = 'https://www.linkedin.com/in/iamstevedavis'}><LinkedInIcon className={classes.iconStyles} /></IconButton>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <IconButton download href={resume}>
                 <DescriptionIcon className={classes.iconStyles} />
               </IconButton>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Toolbar>
       </AppBar>
