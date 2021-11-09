@@ -9,7 +9,7 @@
   "scripts": {
     "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop -H 0.0.0.0",
-    "build": "gatsby build; cp ./CNAME ./public/",
+    "build": "gatsby build; cp ./CNAME ./public/; cp -r ./public ./docs",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
