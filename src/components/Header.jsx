@@ -1,11 +1,10 @@
-import * as React from 'react';
 import {
-  AppBar, Toolbar, Grid, IconButton, Button,
+  AppBar, Button, Grid, IconButton, Toolbar,
 } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { makeStyles } from '@material-ui/styles';
-import DescriptionIcon from '@material-ui/icons/Description';
+import * as React from 'react';
 // import resume from '../images/Stephen_Davis_Software_Developer.pdf';
 
 const useStyles = makeStyles(() => ({
@@ -16,10 +15,17 @@ const Header = () => {
     <>
       <AppBar position="sticky">
         <Toolbar>
-          <Grid container direction="row">
-            <Button variant="contained" href="/">
-              Home
-            </Button>
+          <Grid container direction="row" spacing={2}>
+            <Grid item>
+              <Button variant="contained" href="/">
+                Home
+              </Button>
+            </Grid>
+            {/* <Grid item>
+              <Button variant="contained" href="/calc">
+                FV Calc.
+              </Button>
+            </Grid> */}
           </Grid>
           <Grid container direction="row-reverse" spacing={2}>
             <Grid item>
