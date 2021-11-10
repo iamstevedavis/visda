@@ -1,20 +1,16 @@
-import 'normalize.css/normalize.css';
-
-import * as React from 'react';
-
-import { Grid, Typography, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import {
+  FormControl, Grid, InputLabel, MenuItem, Paper, Select, Typography,
+} from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { StaticImage } from 'gatsby-plugin-image';
+import { createTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
+import 'normalize.css/normalize.css';
+import * as React from 'react';
 import { useMediaQuery } from 'react-responsive';
-import foto50GIF from '../images/foto_50.gif';
 import Header from '../components/Header';
-import ContentCard from '../components/ContentCard';
-import MyCarousel from '../components/MyCarousel';
-import MyCanvas from '../components/MyCanvas';
+import foto50GIF from '../images/foto_50.gif';
 
-const darkTheme = createMuiTheme({
+const darkTheme = createTheme({
   palette: {
     type: 'dark',
   },
@@ -23,7 +19,7 @@ const darkTheme = createMuiTheme({
   },
 });
 
-const lightTheme = createMuiTheme({
+const lightTheme = createTheme({
   palette: {
     type: 'light',
   },
@@ -79,9 +75,13 @@ const FotoPage = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 760px)' });
   const topLevelDark = isMobile;
   const classes = useStyles();
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
   return (
-    // https://github.com/mui-org/material-ui/issues/7466
-    // https://blog.logrocket.com/the-material-ui-grid-system/
     <div style={{ overflow: 'hidden' }}>
       <MuiThemeProvider theme={topLevelDark ? darkTheme : lightTheme}>
         <CssBaseline />
@@ -91,7 +91,23 @@ const FotoPage = () => {
           <Grid item container spacing={2}>
             <Grid item xs={0} sm={1} />
             <Grid item container xs={12} sm={5}>
-              Left
+              <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
+                <Select
+                  labelId="demo-simple-select-standard-label"
+                  id="demo-simple-select-standard"
+                  value={age}
+                  onChange={handleChange}
+                  label="Age"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item container xs={12} sm={5} justify="center" direction="column">
               <Grid item xs={0} sm={1} />
